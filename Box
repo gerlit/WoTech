@@ -7,14 +7,26 @@ public class Main {
 
     System.out.println("Your text: ");
     String text = scanner.nextLine();
+    int lenght = text.length(); 
+    int lenghtTotal = lenght + 6;
 
-    System.out.println(" ================");
-    System.out.println("|                |");
-    System.out.print("|     ");
-    System.out.print(text);
-    System.out.println("     |");
-    System.out.println("|                |");
-    System.out.println(" ================");
+    String space = " ";
+    String topAndBottom = "=";
+
+    String spaceResult = space.repeat(lenghtTotal);
+    String topAndBottomResult = topAndBottom.repeat(lenghtTotal);
+
+    String startAndEnd = " " + topAndBottomResult;
+    String between = "|" + spaceResult + "|";
+    String center = "|   " + text + "   |";
+
+    System.out.println(startAndEnd);
+    System.out.println(between);
+    System.out.println(between);
+    System.out.println(center);
+    System.out.println(between);
+    System.out.println(between);
+    System.out.println(startAndEnd);
 
     scanner.close();
   }
