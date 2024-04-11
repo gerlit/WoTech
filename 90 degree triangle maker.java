@@ -8,7 +8,9 @@ public class Main {
     System.out.println("Please provide a number: ");
     int number = scanner.nextInt();
 
-    for (String triangle = "_"; number != 0; number = number - 1) {
+    String triangle = "_";
+
+    for (int i = 1; i <= number; i++) {
       System.out.println(triangle);
       triangle = triangle + "_";
     }
