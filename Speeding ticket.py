@@ -10,10 +10,12 @@ except:
 else:
   difference = actual_speed - speed_limit
   fine = difference * 3
-  if speed_limit >= actual_speed:
+  if speed_limit < 0 or actual_speed < 0:
+    print("Speed limit must be positive.")
+  elif speed_limit >= actual_speed:
     print("Speed limit in not exceeded. No fine applied.")
   else:
     if fine <= 190:
-      print(f"your fine is {fine}€")
+      print(f"Your fine is {fine}€")
     else:
-      print("your fine 190€")
+      print("Your fine 190€")
