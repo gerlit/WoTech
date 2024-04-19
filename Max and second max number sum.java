@@ -1,10 +1,10 @@
 public class Main {
   public static void main(String[] args) {
 
-    int[] numbers = {-10, 350, -8, 20, 1};
+    int[] numbers = {2, 3, 1, 5, 4};
     
-    int max = numbers[0];
-    int secondMax = numbers[0];
+    int max = Integer.MIN_VALUE;
+    int secondMax = Integer.MIN_VALUE;
 
     for (int i = 0; i < numbers.length; i++) {
       if (numbers[i]>max){
