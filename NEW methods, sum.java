@@ -14,6 +14,8 @@ public class Main {
 
     System.out.print("Adding these two numbers makes: ");
     System.out.println(result);
+
+    scanner.close();
   }
 
   public static int sum (int number1, int number2) {
