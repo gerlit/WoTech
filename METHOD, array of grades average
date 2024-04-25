@@ -1,0 +1,23 @@
+public class Main {
+    public static void main(String[] args) {
+        int[] robertsGrades = {8, 6, 7, 9, 10};
+        int[] annasGrades = {7, 10, 10, 9, 6};
+        int[] franceskasGrades = {8, 8, 8, 7, 6};
+
+        double robertsAverage = calculateAverage(robertsGrades);
+        double annasAverage = calculateAverage(annasGrades);
+        double franceskasAverage = calculateAverage(franceskasGrades);
+
+        System.out.println("Robert's average grade is " + robertsAverage);
+        System.out.println("Anna's average grade is " + annasAverage);
+        System.out.println("Franceska's average grade is " + franceskasAverage);
+    }
+
+    public static double calculateAverage(int[] grades) {
+        int sum = 0;
+        for (int grade : grades) {
+            sum = sum + grade;
+        }
+        return (double) sum / grades.length;
+    }
+}
