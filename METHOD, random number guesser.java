@@ -18,7 +18,7 @@ public class Main {
   public static void result(int number, int guess) {
     Scanner scanner = new Scanner(System.in);
 
-    int guesses = 6;
+    int guesses = 5;
 
     for (int i = 0; i < guesses; i++){
       if (guess < 0 || guess > 100){
@@ -40,6 +40,8 @@ public class Main {
 
       if (i == guesses - 1 && guess != number) {
         System.out.println("\nYou are out of guesses");
+      } else if (i == guesses - 1 && guess == number) {
+        System.out.println("\nCongratulations, you guessed the number");
       }
     }
 
