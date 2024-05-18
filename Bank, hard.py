@@ -19,7 +19,7 @@ while True:
       else:
         balance = balance - withdraw
     except:
-      print("Invalid input. Please enter a numeric value for the deposit.")
+      print("Invalid input. Please enter a numeric value for the withdraw.")
   elif answer == "3":
     print(f"\nYour total account balance is {round(balance, 2)}")
   elif answer == "4":
