@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -18,8 +19,13 @@ public class Main {
         .stream()
         .skip(5)
         .filter(n -> n % 2 == 0)
+        .limit(3)
         .collect(Collectors.toList());
 
+    printOutNumbers(filteredNumbers);
+  }
+
+  public static void printOutNumbers(List<Integer> filteredNumbers) {
     System.out.println(filteredNumbers);
   }
 }
