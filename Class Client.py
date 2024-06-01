@@ -34,6 +34,7 @@ class Transaction:
     self.note = note
     self.time_stamp = datetime.datetime.now()
 
+
 clients = []
 clients.append(Client('123456', 'Anna'))
 clients.append(Client('987654', 'Oskar'))
@@ -57,6 +58,6 @@ print(f'We have {Client.number_of_clients} clients in our bank:')
 for client in clients:
   print(f'Client {client.name} has the following accounts:')
   for account in client.accounts:
-    print(f'    {account.number} ({account.currency}) {account.balance}')
+    print(account.number, account.balance, account.currency)
     for transaction in account.transactions:
-      print(f'        {transaction.time_stamp} {transaction.currency} {transaction.amount}')
+      print(transaction.time_stamp, transaction.amount, transaction.currency)
