@@ -23,13 +23,7 @@ public class Main {
 
         for(var paymentService : list){
             System.out.println(paymentService.currency);
-            if(paymentService instanceof SebPaymentService){
-                SebPaymentService sebService = (SebPaymentService)paymentService;
-                sebService.sendPaymentToSeb();
-            } else if(paymentService instanceof SwedPaymentService){
-                SwedPaymentService swedService = (SwedPaymentService) paymentService;
-                swedService.sendPaymentToSwed();
-            }
+            paymentService.sendPayment();
         }
     }
 }
@@ -39,19 +33,25 @@ public class PaymentService{
   public int amount;
   public String description;
   public String currency;
+
+  public void sendPayment() {
+    System.out.println("This is a payment to some service");
+  }
 }
 
-public class SebPaymentService extends PaymentService{
+public class SebPaymentService extends PaymentService {
 
-  public void sendPaymentToSeb(){
+  @Override
+  public void sendPayment() {
     System.out.println("This is a payment to SEB service");
   }
-  
+
 }
 
-public class SwedPaymentService extends PaymentService{
+public class SwedPaymentService extends PaymentService {
 
-  public void sendPaymentToSwed(){
+  @Override
+  public void sendPayment() {
     System.out.println("This is a payment to Swedbank service");
   }
 
