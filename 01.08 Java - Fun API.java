@@ -1,19 +1,15 @@
 package com.datorium.Datorium.API;
 
 public class Christmas {
-    public int gift;  // Change to int to hold numerical value
+    public int giftNumber;
 }
 
 package com.datorium.Datorium.API;
 
 public class Gift {
-    public String name;  // Field to hold the gift name
-
-    // Constructor to initialize the gift name
-    public Gift(String name) {
-        this.name = name;
-    }
+    public String name;
 }
+
 package com.datorium.Datorium.API;
 
 import org.springframework.boot.SpringApplication;
@@ -32,20 +28,21 @@ public class DatoriumApiApplication {
 
 	@PostMapping("/christmas")
 	public Gift christmas(@RequestBody Christmas christmas) {
-		// Determine gift based on the number provided
-		if (christmas.gift == 1) {
-			return new Gift("Toy car");
-		} else if (christmas.gift == 2) {
-			return new Gift("Doll");
-		} else if (christmas.gift == 3) {
-			return new Gift("Board game");
+		var gift = new Gift();
+		if (christmas.giftNumber == 1) {
+			gift.name = "Toy car";
+		} else if (christmas.giftNumber == 2) {
+			gift.name = "Doll";
+		} else if (christmas.giftNumber == 3) {
+			gift.name = "Board game";
 		} else {
-			return new Gift("Gift card");  // Default gift
+			gift.name = "Gift card";
 		}
+		return gift;
 	}
 }
 
 http://localhost:8080/christmas
 {
-  "gift": 1
+  "giftNumber": 1
 }
